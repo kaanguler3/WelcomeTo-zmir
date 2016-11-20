@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_metro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.monster.welcometoizmir.activities.MetroActivity">
+
+    <ListView
+        android:id="@+id/lstMetroStops"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</android.support.percent.PercentRelativeLayout>

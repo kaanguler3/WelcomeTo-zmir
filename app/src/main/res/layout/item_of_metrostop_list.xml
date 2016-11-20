@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtStopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerVertical="true"
+        />
+
+    <ImageView
+        android:id="@+id/imgLineColor1"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+
+        android:layout_centerVertical="true"
+
+        android:layout_toRightOf="@id/txtStopName"
+        />
+
+    <ImageView
+        android:id="@+id/imgLineColor2"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+
+        android:layout_centerVertical="true"
+
+        android:layout_toRightOf="@id/imgLineColor1"
+        />
+
+    <ImageView
+        android:id="@+id/imgIconfield1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toRightOf="@id/imgLineColor2"
+        />
+
+    <ImageView
+        android:id="@+id/imgIconfield2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toRightOf="@id/imgIconfield1"
+        />
+
+    <ImageView
+        android:id="@+id/imgIconfield3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toRightOf="@id/imgIconfield2"
+        />
+</android.support.percent.PercentRelativeLayout>
