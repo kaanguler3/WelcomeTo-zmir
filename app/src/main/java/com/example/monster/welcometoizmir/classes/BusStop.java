@@ -63,4 +63,6 @@ public class BusStop implements Serializable {
     public void setMetroTransferEnable(boolean metroTransferEnable) {
         isMetroTransferEnable = metroTransferEnable;
     }
+
+
 }

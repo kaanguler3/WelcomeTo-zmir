@@ -33,12 +33,32 @@ public class UtilTransportation {
         this.activity = activity;
     }
 
+    public static void initializeIsTransferValuesForStops(){
+        MainActivity.busStops.get("Fahrettin Altay Aktarma Merkezi").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Üçyol Metro").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Halkapınar Metro").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Bornova Metro").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Evka 3").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Ulukent Gar").setMetroTransferEnable(true); // ??
+        MainActivity.busStops.get("Egekent Aktarma Merkezi").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Çiğli Aktarma Merkezi").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Mavişehir").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Menemen Aktarma Merkezi").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Turan").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Salhane Aktarma Merkezi").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Biçerova İstasyon").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Hatundere İstasyon").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Tekeli İstasyon").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Pancar Yol Ayrımı").setMetroTransferEnable(true); // ???
+        MainActivity.busStops.get("Kuşçuburun Aktarma").setMetroTransferEnable(true);
+        MainActivity.busStops.get("Tepeköy Aktarma").setMetroTransferEnable(true);
+    }
+
     public static HashMap<Integer, ArrayList<MetroStop>> initializeMetros(){
         HashMap<Integer, ArrayList<MetroStop>> metroLines;
         metroLines = new HashMap<>();
         ///1-kırmızı hat  ,  2-mavi   ,   3-açık yeşil   ,  4-koyu yeşil"
 
-        Log.i("aq", "aq all");
         ///METRO HATTI 1 (KIRMIZI)
         MetroStop metroStop1 = new MetroStop("Fahrettin Altay", 1);
         metroStop1.setBusTransferEnable(true);
@@ -239,4 +259,6 @@ public class UtilTransportation {
 
         return metroLines;
     }
+
+
 }

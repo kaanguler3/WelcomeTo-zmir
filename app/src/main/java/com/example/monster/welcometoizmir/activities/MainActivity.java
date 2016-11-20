@@ -23,12 +23,11 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     private boolean isBusDataDownloaded;
-    Button btnBusList, btnMetro;
+    Button btnBusList, btnMetro, btnBusStops;
 
     public static HashMap<String, Bus> buses;
     public static HashMap<String, BusStop> busStops;
     public static HashMap<Integer, ArrayList<MetroStop>> metroLines;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -38,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
         if (!isBusDataDownloaded){
             new GetBusesTask(this).execute();
         }
-
+        UtilTransportation.initializeIsTransferValuesForStops();
 
         btnBusList = (Button)findViewById(R.id.btnBuses);
         btnMetro = (Button)findViewById(R.id.btnMetro);
+        btnBusStops = (Button)findViewById(R.id.btnStops);
 
         btnBusList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnBusStops.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), BusStopListActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void loadData() {

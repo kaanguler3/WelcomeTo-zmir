@@ -43,6 +43,7 @@ public class GetBusesTask extends AsyncTask<String, String, String> {
 
     protected void onPostExecute(String result) {
         saveData();
+
         super.onPostExecute(result);
     }
 
@@ -106,6 +107,7 @@ public class GetBusesTask extends AsyncTask<String, String, String> {
                 Log.i("stop:", busStop.getName());
                 busStop.getBuses().add(bus);
                 bus.getStops().add(busStop);
+                MainActivity.busStops.put(busStop.getName(), busStop);
             }
 
             //OTOBÜS İLK SON DURAK KALKIŞ SAATLERİ

@@ -59,15 +59,6 @@ public class BusListActivity extends AppCompatActivity {
             for (String key: map.keySet()) {
                 mData.add(map.get(key));
             }
-
-            // Sorting
-            Collections.sort(mData, new Comparator<Bus>() {
-                @Override
-                public int compare(Bus bus1, Bus bus2)
-                {
-                    return  bus1.getIntegerId() - bus2.getIntegerId();
-                }
-            });
         }
 
         @Override

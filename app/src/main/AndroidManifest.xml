@@ -17,15 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.BusListActivity">
-
-
-        </activity>
+        <activity android:name=".activities.BusListActivity"></activity>
         <activity android:name=".activities.BusHoursAndStopsActivity" />
-        <activity android:name=".activities.MetroActivity">
-
-
-        </activity>
+        <activity android:name=".activities.MetroActivity"></activity>
+        <activity android:name=".activities.BusStopListActivity"></activity>
     </application>
 
 </manifest>
