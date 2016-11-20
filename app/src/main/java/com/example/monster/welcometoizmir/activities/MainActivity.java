@@ -6,17 +6,39 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 
+import com.example.monster.welcometoizmir.GetBusesTask;
 import com.example.monster.welcometoizmir.R;
+import com.example.monster.welcometoizmir.UtilTransportation;
+import com.example.monster.welcometoizmir.classes.Bus;
+import com.example.monster.welcometoizmir.classes.BusStop;
+import com.example.monster.welcometoizmir.classes.MetroStop;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
+    private boolean isBusDataDownloaded;
     Button btnBusList, btnMetro;
+
+    public static HashMap<String, Bus> buses;
+    public static HashMap<String, BusStop> busStops;
+    public static HashMap<Integer, ArrayList<MetroStop>> metroLines;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        metroLines = UtilTransportation.initializeMetros();
+        loadData();
+        if (!isBusDataDownloaded){
+            new GetBusesTask(this).execute();
+        }
+
 
         btnBusList = (Button)findViewById(R.id.btnBuses);
         btnMetro = (Button)findViewById(R.id.btnMetro);
@@ -37,5 +59,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void loadData() {
+        try {
+            String fileName = "buses&stops.ser";
+            FileInputStream fis = this.openFileInput(fileName);
+            ObjectInputStream is = new ObjectInputStream(fis);
+            MainActivity.buses = (HashMap<String, Bus>) is.readObject();
+            MainActivity.busStops =  (HashMap<String, BusStop>) is.readObject();
+            this.isBusDataDownloaded = is.readBoolean();
+            is.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 }

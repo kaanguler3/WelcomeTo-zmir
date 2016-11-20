@@ -8,10 +8,16 @@ import java.util.ArrayList;
  * Created by MONSTER on 19.11.2016.
  */
 
-public class MetroStop extends Stop{
+public class MetroStop{
+    private String name;
+    private int iconId;
     private int lineId, lineId2;
     private int lineColorID1, lineColorID2;
-
+    private boolean isMetroTransferEnable; // bu istasyondan başka metroya aktarma yapılıyor mu
+    private boolean isBusTransferEnable; /// bu istasyondan otobüs geçiyor mu.
+    private boolean isFerryTransferEnable;
+    private boolean isTramwayTransferEnable;
+    private boolean isRailwayTrasnferEnable;
 
     public MetroStop(String name, int lineId){
         setName(name);
@@ -70,6 +76,14 @@ public class MetroStop extends Stop{
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getLineColorID1() {
         return lineColorID1;
     }
@@ -84,5 +98,53 @@ public class MetroStop extends Stop{
 
     public void setLineColorID2(int lineColorID2) {
         this.lineColorID2 = lineColorID2;
+    }
+
+    public boolean isRailwayTrasnferEnable() {
+        return isRailwayTrasnferEnable;
+    }
+
+    public void setRailwayTrasnferEnable(boolean railwayTrasnferEnable) {
+        isRailwayTrasnferEnable = railwayTrasnferEnable;
+    }
+
+    public boolean isTramwayTransferEnable() {
+        return isTramwayTransferEnable;
+    }
+
+    public void setTramwayTransferEnable(boolean tramwayTransferEnable) {
+        isTramwayTransferEnable = tramwayTransferEnable;
+    }
+
+    public boolean isFerryTransferEnable() {
+        return isFerryTransferEnable;
+    }
+
+    public void setFerryTransferEnable(boolean ferryTransferEnable) {
+        isFerryTransferEnable = ferryTransferEnable;
+    }
+
+    public boolean isBusTransferEnable() {
+        return isBusTransferEnable;
+    }
+
+    public void setBusTransferEnable(boolean busTransferEnable) {
+        isBusTransferEnable = busTransferEnable;
+    }
+
+    public boolean isMetroTransferEnable() {
+        return isMetroTransferEnable;
+    }
+
+    public void setMetroTransferEnable(boolean metroTransferEnable) {
+        isMetroTransferEnable = metroTransferEnable;
+    }
+
+    public int getIconId() {
+        return iconId;
+    }
+
+    public void setIconId(int iconId) {
+        this.iconId = iconId;
     }
 }

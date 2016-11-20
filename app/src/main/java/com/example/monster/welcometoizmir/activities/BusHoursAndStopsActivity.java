@@ -3,6 +3,7 @@ package com.example.monster.welcometoizmir.activities;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,8 @@ public class BusHoursAndStopsActivity extends AppCompatActivity {
         bus = (Bus) getIntent().getSerializableExtra("bus");
         getSupportActionBar().setTitle("OTOBÜS : " + bus.getBusId());
 
+
+        System.out.println(bus.getStops().get(0).getName());
 
         txtStopNames = (TextView) findViewById(R.id.txtStopNames);
         for (int i=0; i<bus.getStops().size(); i++){
